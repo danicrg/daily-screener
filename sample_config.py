@@ -1,0 +1,4 @@
+USERNAME = ''
+PASSWORD = ''
+PATH_TO_PROFILE = ''
+PATH_TO_CWD = ''

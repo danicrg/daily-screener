@@ -6,20 +6,23 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.webdriver import FirefoxProfile
 from selenium.webdriver.firefox.options import Options
 
+import config
+
+
 # setup
-os.chdir("path_to_cwd") # edit here
-profile = FirefoxProfile("path_to_profile") # edit here
+os.chdir(config.PATH_TO_CWD)
+profile = FirefoxProfile(config.PATH_TO_PROFILE)
 options = Options()
 options.headless = True
 driver = webdriver.Firefox(
-    executable_path="path_to_geckodriver", # edit here
+    executable_path=config.PATH_TO_DRIVER,
     options=options,
     firefox_profile=profile
 )
 driver.get("https://calberkeley.ca1.qualtrics.com/jfe/form/SV_3xTgcs162K19qRv")
 
 # page 1
-driver.find_element_by_id("QID1-1-label").click()
+WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.ID, "QID1-1-label"))).click()
 driver.find_element_by_id("NextButton").click()
 
 # page 2
@@ -27,8 +30,8 @@ WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.ID, "QID10-5-l
 driver.find_element_by_id("NextButton").click()
 
 # CalNet authentication
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys("username_goes_here") # edit here
-driver.find_element_by_id("password").send_keys("password_goes_here") # edit here
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys(config.USERNAME) # edit here
+driver.find_element_by_id("password").send_keys(config.PASSWORD) # edit here
 driver.find_element_by_id("submit").click()
 
 # page 3
