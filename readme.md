@@ -1,6 +1,7 @@
 # Instructions for running `symptom_clean.py`
 
 Tested on:
+
 1. 
     - macOS Big Sur 11.5.2 (Apple Silicon)
     - Firefox 92.0.1 (64-bit)
