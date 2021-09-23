@@ -17,7 +17,7 @@ For every system:
 - Rename sample_config.py to config.py
 - Download Firefox
 - Create a new profile ([about:profiles](about:profiles)) in Firefox and put its path in the config.py file. (Alternatively use your default profile)
-- Download GeckoDriver](https://github.com/mozilla/geckodriver/releases) and put its path in the config.py file.
+- Download [GeckoDriver](https://github.com/mozilla/geckodriver/releases) and put its path in the config.py file.
 - Include the directory path of where symptom_clean.py is located in config.py.
 - Include your password and username in config.py
 
