@@ -35,7 +35,3 @@ Every day:
 # every time you turn on your computer
 @reboot python3 path_to_file/symptom_clean.py
 ```
-
-## Debugging information
-If you need the program to display a browser window (for debugging purposes) you should comment out the line `options=options,` (line 16).
-You may also need to first run `export DISPLAY=:0` in your terminal for it to run.
