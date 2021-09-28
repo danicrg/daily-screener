@@ -30,8 +30,8 @@ WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.ID, "QID10-5-l
 driver.find_element_by_id("NextButton").click()
 
 # CalNet authentication
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys(config.USERNAME) # edit here
-driver.find_element_by_id("password").send_keys(config.PASSWORD) # edit here
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys(config.USERNAME)
+driver.find_element_by_id("password").send_keys(config.PASSWORD)
 driver.find_element_by_id("submit").click()
 
 # page 3
