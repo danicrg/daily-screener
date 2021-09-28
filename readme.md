@@ -1,4 +1,4 @@
-# Instructions for running `symptom_clean.py`
+# Configuration Steps
 
 Tested on:
 
@@ -14,12 +14,12 @@ Tested on:
     - GeckoDriver 0.29.1
 
 For every system:
-- Rename sample_config.py to config.py
-- Download Firefox
-- Create a new profile ([about:profiles](about:profiles)) in Firefox and put its path in the config.py file. (Alternatively use your default profile)
-- Download [GeckoDriver](https://github.com/mozilla/geckodriver/releases) and put its path in the config.py file.
-- Include the directory path of where symptom_clean.py is located in config.py.
-- Include your password and username in config.py
+1. Rename sample_config.py to config.py
+2. Download Firefox
+3. Create a new profile ([about:profiles](about:profiles)) in Firefox and put its path in the config.py file. (Alternatively use your default profile)
+4. Download [GeckoDriver](https://github.com/mozilla/geckodriver/releases) and put its path in the config.py file.
+5. Include the directory path of where symptom_clean.py is located in config.py.
+6. Include your password and username in config.py
 
 
 Every 30 days:
