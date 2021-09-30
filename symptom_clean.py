@@ -29,16 +29,25 @@ driver.find_element_by_id("NextButton").click()
 WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.ID, "QID10-5-label"))).click()
 driver.find_element_by_id("NextButton").click()
 
-# CalNet authentication
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys(config.USERNAME) # edit here
-driver.find_element_by_id("password").send_keys(config.PASSWORD) # edit here
-driver.find_element_by_id("submit").click()
+try:
 
-# page 3
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "QID3-2-label"))).click()
-driver.find_element_by_id("QID6-5-label").click()
-driver.find_element_by_id("QID17-1-label").click()
-driver.find_element_by_id("QID13-2-label").click()
-driver.find_element_by_id("NextButton").click()
+    # CalNet authentication
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys(config.USERNAME) # edit here
+    driver.find_element_by_id("password").send_keys(config.PASSWORD) # edit here
+    driver.find_element_by_id("submit").click()
+
+    # page 3
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "QID3-2-label"))).click()
+    driver.find_element_by_id("QID6-5-label").click()
+    driver.find_element_by_id("QID17-1-label").click()
+    driver.find_element_by_id("QID13-2-label").click()
+    driver.find_element_by_id("NextButton").click()
+
+    print('Screener Done!')
+
+except:
+    print('You need to authenticate again!')
 
 driver.quit()
+
+
