@@ -21,27 +21,29 @@ driver = webdriver.Firefox(
 )
 driver.get("https://calberkeley.ca1.qualtrics.com/jfe/form/SV_3xTgcs162K19qRv")
 
-# page 1
-WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.ID, "QID1-1-label"))).click()
-driver.find_element_by_id("NextButton").click()
+try:
+    # page 1
+    WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.ID, "QID1-1-label"))).click()
+    driver.find_element_by_id("NextButton").click()
 
-# page 2
-WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.ID, "QID10-5-label"))).click()
-driver.find_element_by_id("NextButton").click()
+    # page 2
+    WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.ID, "QID10-5-label"))).click()
+    driver.find_element_by_id("NextButton").click()
 
-# CalNet authentication
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys(config.USERNAME)
-driver.find_element_by_id("password").send_keys(config.PASSWORD)
-driver.find_element_by_id("submit").click()
+    # CalNet authentication
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys(config.USERNAME)
+    driver.find_element_by_id("password").send_keys(config.PASSWORD)
+    driver.find_element_by_id("submit").click()
 
-# page 3
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "QID3-3-label"))).click()
-driver.find_element_by_id("QID6-5-label").click()
-driver.find_element_by_id("QID17-1-label").click()
-driver.find_element_by_id("QID13-2-label").click()
-driver.find_element_by_id("NextButton").click()
+    # page 3
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "QID3-3-label"))).click()
+    driver.find_element_by_id("QID6-5-label").click()
+    driver.find_element_by_id("QID17-1-label").click()
+    driver.find_element_by_id("QID13-2-label").click()
+    driver.find_element_by_id("NextButton").click()
 
-
+except:
+    print('Something went wrong')
 driver.quit()
 
 
