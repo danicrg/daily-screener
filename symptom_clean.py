@@ -35,6 +35,7 @@ driver.find_element_by_id("submit").click()
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "QID3-3-label"))).click()
 driver.find_element_by_id("NextButton").click()
 
+driver.close()
 driver.quit()
 
 
